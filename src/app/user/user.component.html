@@ -1,2 +1,22 @@
 <p>user works!</p>
 <p>Hello {{ name }}, how are you?</p>
+<p>Please enter a value for how you are doing:  using event</p>
+<!-- using input event to change value of a variable and also binding to a variable -->
+<input type="text" (input)="onUserInput($event)" [value]=userResponse>
+<p>I am {{ userResponse }}</p>
+<!-- Doing the same operation with two way databinding-->
+<!--<input type="text" [(ngModel)]="userResponseTwo"> -->
+<p>Response from two way data binding {{ userResponseTwo }}</p>
+
+<p>Load state:  {{loadState}}</p> <button (click)="onUserClick($event)">Change state</button>
+<div><input type="text" [(ngModel)] = "loadStateTwo"></div>
+
+<p>Load state change two way binding:  {{ loadStateTwo }}</p>
+<!-- using binding instead of string interpolation -->
+<p [textContent] = "loadState"></p>
+
+<input type="text"(input)="onUserInput($event)" [value]=name>
+
+
+<hr>
+<app-dashboard [dashboardName]='newDashboardName' (dashboardChanged)="onUserDashboardChange($event)"></app-dashboard>
