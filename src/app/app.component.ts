@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'NoteApp';
   rootName = 'Jeremy';
+  rootItems=['apples','bannanas', 'cherries'];
+
 
   onNameChanged(newName) {
      this.rootName = newName;
+  }
+  onItemsWasAdded(newItem){
+    this.rootItems.push(newItem);
+    console.log(this.rootItems);
   }
 }
